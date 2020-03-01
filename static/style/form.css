@@ -1,0 +1,209 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+p{
+    color:#49494b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15pt;
+
+}
+
+.main2{
+    text-align: center;
+}
+.main{
+    width: 370px;
+    height: auto;
+    padding: 40px 35px;
+    border-radius: 5px;
+    border: solid 1px grey;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#tixo{
+    height: 110px;
+    width: 130px;
+    display: block;
+    margin: auto;
+    margin-top: 0px;
+
+}
+
+
+.field{
+    width: 300px;
+    height: 40px;
+    margin: 10px 8px;
+    font-size: 11pt;
+    padding: 8px 15px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.field:focus{
+    border: 1px solid #248fa8;
+}
+
+.message{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+    margin: 8px;
+    text-align: center;
+    line-height:23px;
+}
+
+.mybutton{
+    width: 330px;
+    height: 40px;
+    margin: 10px 8px;
+    background-color:#248fa8;
+    color: white;
+    border: none;
+    font-size: 11.5pt;
+    font-weight: bold;
+    transition-duration: 0.5s;
+    border-radius: 4px;
+}
+
+.mybutton:hover{
+    cursor: pointer;
+    background-color:#0182a0;
+    transition-duration: 0.5s;
+}
+
+
+.mainparking{
+    width: 97%;
+    height: 870px;
+    margin: 10px auto;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.leftpark{
+    float: left;
+    color: black;
+    width: 900px;
+    margin-right: 20px;
+    height: auto;
+    border-radius: 5px;
+
+}
+
+.rightpark{
+    float: left;
+    border-radius: 5px;
+}
+
+.mainMap{
+    width: 900px;
+    margin-top: 20px;
+    margin-right: 10px;
+    /* background-color: #4285f4; */
+    height: 770px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}   
+
+.cardview{
+    padding: 10px;
+    width: 264px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.booking{
+    margin: 5px 5px;
+    margin-right: 4px;
+    height: 30px;
+    font-size: 11pt;
+    padding: 8px 15px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.booking:focus{
+    border: 1px solid #248fa8;
+
+}
+
+#vehicle{
+    width: 140px;
+    margin-right: 0px;
+}
+
+#place{
+    width: 40px;
+}
+
+#date{
+    width: 59px;
+    margin-right: 0px;
+}
+
+#starttime, #endtime{
+    width: 40px;
+    margin-right: 0px;
+}
+
+#out{
+    margin-top: 0px;
+}
+
+.booknowBTN{
+    width: 251px;
+    height: 50px;
+    margin: 10px 6px;
+    background-color:#248fa8;
+    color: white;
+    border: none;
+    font-size: 11.5pt;
+    font-weight: bold;
+    transition-duration: 0.5s;
+    border-radius: 4px;
+}
+
+.booknowBTN:hover{
+    cursor: pointer;
+    background-color:#0182a0;
+    transition-duration: 0.5s;
+}
+
+.feed{
+
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+    height: 335px;
+    border-radius: 5px;
+    margin-left: 5px;
+    width: 227px;
+}
+
+.slot{
+    width: 92px; 
+    height:121px;
+    margin-left: 11px;
+    float: left;
+}
+
+
+
+.car{
+    margin: 4px 10px;
+    display: none;
+
+}
+
+#loginmain, #signupmain{
+    width: 160px;
+    float: left;
+    margin-top: 30px;
+}

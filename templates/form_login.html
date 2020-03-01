@@ -1,0 +1,54 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{%static 'style/form.css' %}">
+    <title>Login</title>
+
+
+     <script type="text/javascript">
+        function preventBack() {
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+    </script>
+</head>
+<body>
+    <div class="main">
+        <form action="{% url 'login_view' %}"  method="post" class="main2" autocomplete="off">
+            {% csrf_token %}
+            <img src="{%static 'img/parking.png'%}" alt="Tixo Arts" id="tixo">
+            <p>LOGIN HERE!</p>
+
+            <input class="field" id="email" name="email" type="email" placeholder="Email Address" required>
+            <input class="field" id="pass" name="pass" type="password" placeholder="Password" required>
+            <p class="message">Write your registered email & password</p>
+            <button class="mybutton" id="submit">LOGIN</button>
+                <p class="message" 
+                    style="text-align: center; font-size: 11pt">
+                    Never Registered? <a href="{% url 'form_signup' %}" style="text-decoration: none; color:#248fa8">SIGNUP here</a>
+                </p>
+        </form>   
+    </div>
+
+</body>
+
+<script>
+
+     if({{notFound}}==1){
+        window.alert("This email is not registered in our record")
+    }
+    console.log("I am working...")
+</script>
+
+</html>
+
+{% endblock %}

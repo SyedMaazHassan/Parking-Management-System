@@ -1,0 +1,42 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'style/form.css' %}">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="main">
+        <form action="{% url 'signup_view' %}" method="post" class="main2" autocomplete="off">
+            {% csrf_token %}
+            <img src="{% static 'img/parking.png' %}" alt="Tixo Arts" id="tixo">
+            <p>REGISTER HERE!</p>
+            <input name="name" class="field" id="fullname" type="text" placeholder="Full Name" required>
+            <input name="email" class="field" id="email" type="email" placeholder="Email Address" required>
+            <input name="pass1" class="field" id="pass1" type="password" placeholder="Password" required>
+            <input name="pass2" class="field" id="pass2" type="password" placeholder="Confirm Password" required>
+            <p class="message">Please! Enter your authentic details.</p>
+            <input class="mybutton" type="submit"/>
+                <p class="message" 
+                    style="text-align: center; font-size: 11pt">
+                    Already Registered? <a href="{% url 'form_login' %}" style="text-decoration: none; color:#248fa8">LOGIN here</a>
+                </p>
+        </form>
+    </div>
+
+</body>
+
+<script>
+    if({{notsame}}==1){
+        window.alert("Oop! Password doesn't match!")
+    }
+</script>
+
+
+</html>
+
+{% endblock %}

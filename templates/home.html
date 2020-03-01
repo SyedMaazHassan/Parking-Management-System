@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Hellow {{name}}</h1>
+
+<form action="add" method="POST">
+
+    {% csrf_token %}
+
+    Enter first number: <input type="number" name="one"><br>
+    Enter Second number: <input type="number" name="two"><br>
+    <input type="submit">
+
+</form>
+
+{% endblock %}
+

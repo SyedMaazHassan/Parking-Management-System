@@ -1,0 +1,137 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'style/form.css' %}">
+    <title>Parking map</title>
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+    </script>
+</head>
+<body>
+    <div class="mainparking">
+        <div class="leftpark">
+            <hr>
+            <p>{{pm}}</p>
+            <hr>
+
+            <div class="mainMap">
+                <img style="position:absolute; z-index:-10px" src="{% static 'img/map.png' %}" alt="map here">
+                <div style="position:absolute; z-index:10px;">
+                <div style="margin-top: 30px;">
+                    <div class="slot" style="margin-left: 10px; width: 74px;"><img id="c1" style="margin-left: 0px;" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c2" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c3" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c4" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c5" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c6" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c7" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c8" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot" style="width: 74px;"><img id="c9" class="car" src="{% static 'img/car.png' %}"/></div>
+                </div>
+
+                <div style="margin-top: 227px;">
+                    <div class="slot" style="margin-left: 10px; width: 74px;"><img id="c10" style="margin-left: 0px;" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c11" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c12" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c13" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c14" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c15" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c16" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c17" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot" style="width: 74px;"><img id="c18" class="car" src="{% static 'img/car2.png' %}"/></div>
+                </div>
+
+                <div style="margin-top: 401px;">
+                    <div class="slot" style="margin-left: 10px; width: 74px;"><img id="c19" style="margin-left: 0px;" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c20" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c21" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c22" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c23" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c24" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c25" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot"><img id="c26" class="car" src="{% static 'img/car.png' %}"/></div>
+                    <div class="slot" style="width: 74px;"><img id="c27" class="car" src="{% static 'img/car.png' %}"/></div>
+                </div>
+
+                <div style="margin-top: 598px;">
+                    <div class="slot" style="margin-left: 10px; width: 74px;"><img id="c28" style="margin-left: 0px;" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c29" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c30" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c31" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c32" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c33" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c34" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot"><img id="c35" class="car" src="{% static 'img/car2.png' %}"/></div>
+                    <div class="slot" style="width: 74px;"><img id="c36" class="car" src="{% static 'img/car2.png' %}"/></div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rightpark">
+            <div class="cardview">
+                <form action="{% url 'booking_view' %}" method="post" autocomplete="off">
+                    {% csrf_token %}
+                    <input type="text" class="booking" name="vno" id="vehicle" placeholder="Vehicle no." required>
+                    <input type="number" min="0" max="36" class="booking" name="plno" id="place" placeholder="PL no." required>
+                    <input type="text" class="booking" name="date" id="date" placeholder="Date" required>
+                    <input type="text" class="booking" name="st" id="starttime" placeholder="From" required>
+                    <input type="text" class="booking" name="et" id="endtime" placeholder="To" required>
+
+                    <button class="booknowBTN" id="booknow">Book now</button>
+                </form>
+
+
+                <form action="{% url 'bringout_view' %}" method="post" autocomplete="off">
+                    {% csrf_token %}
+                    <button class="booknowBTN" id="out">Bring out</button>
+                </form>
+            </div>
+
+            <div class="cardview" style="margin-top: 20px; height:492px">
+                <p style="font-size:17pt;margin: 10px 5px 20px 5px;">Feedback</p>
+                <form action="{% url 'feedback_view' %}" method="post" autocomplete="off">
+                    {% csrf_token %}
+                    <textarea name="fbck" class="feed" rows="4" cols="50"></textarea>
+                    <button class="booknowBTN">Submit</button>
+                </form>
+            </div>
+
+            <form action="{% url 'logout_view' %}" method="post" autocomplete="off">
+                {% csrf_token %}
+                <button class="booknowBTN" style="width: 284px; margin:17px 0px">Logout</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+
+<script>
+
+    var mylist = {{number}}
+    console.log(mylist)
+    for(let i=0; i < mylist.length; i++){
+        let a = 'c'+mylist[i].toString()
+        var myframe = document.getElementById(a);
+        myframe.style.display = 'block'
+    }
+
+</script>
+
+
+</html>
+
+{% endblock %}

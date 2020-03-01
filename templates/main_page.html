@@ -1,0 +1,34 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{%static 'style/form.css' %}">
+    <title>main</title>
+</head>
+<body>
+    <div class="main" style="height:400px; width: 520px;">
+        <img src="{%static 'img/parking.png'%}" style="margin-top:22px; width:225px; height:200px;" alt="Tixo Arts" id="tixo">
+        <p style="margin-top: 30px; margin-left:35px;">Park your vehicle without getting disturbed!</p>
+        <form action="{% url 'form_login' %}"  method="post" class="main2" autocomplete="off">
+            {% csrf_token %}
+            <button class="mybutton" style="margin-left: 90px; width: 160px;
+    float: left;
+    margin-top: 30px;" id="loginmain">LOGIN</button>
+        </form>
+        <form action="{% url 'form_signup' %}"  method="post" class="main2" autocomplete="off">
+            {% csrf_token %}
+            <button class="mybutton" style="width: 160px;
+    float: left;
+    margin-top: 30px;" id="signupmain">SIGNUP</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
+{% endblock %}
